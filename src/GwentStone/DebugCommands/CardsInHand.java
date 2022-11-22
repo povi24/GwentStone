@@ -1,6 +1,10 @@
 package GwentStone.DebugCommands;
 
 import GwentStone.Card;
+import GwentStone.StartingTheGame;
+import com.fasterxml.jackson.databind.ObjectMapper;
+import com.fasterxml.jackson.databind.node.ObjectNode;
+import fileio.ActionsInput;
 
 import java.util.ArrayList;
 
@@ -8,43 +12,65 @@ public class CardsInHand {
     /**
      * Command to be printed in JSON output file
      */
-    private String Command;
-    /**
-     * Index to be printed in JSON output file
-     */
-    private int PlayerIdx;
-    /**
-     * ArrayList of cards to be printed in JSON output file
-     */
-    private ArrayList<Card> output;
-
-    public CardsInHand(String Command, int PLayerIdx, ArrayList<Card> output) {
-        this.Command = Command;
-        this.PlayerIdx = PLayerIdx;
-        this.output = output;
-    }
-
-    public String getCommand() {
-        return Command;
-    }
-
-    public void setCommand(String command) {
-        Command = command;
-    }
+    private String command;
+    private ObjectNode node;
 
     public int getPlayerIdx() {
-        return PlayerIdx;
+        return playerIdx;
     }
 
     public void setPlayerIdx(int playerIdx) {
-        PlayerIdx = playerIdx;
+        playerIdx = playerIdx;
     }
 
-    public ArrayList<Card> getOutput() {
-        return output;
+    private int playerIdx;
+
+
+    public CardsInHand (ActionsInput action, StartingTheGame newgame, ObjectMapper objectMapper) {
+        this.command = action.getCommand();
+        this.playerIdx = action.getPlayerIdx();
+        ArrayList<Card> deepCopyHand;
+
+        if(playerIdx == 1) {
+
+            deepCopyHand = new ArrayList<>();
+            deepCopyHand.addAll(newgame.getCardsInHandForPlayerOne());
+        } else {
+            deepCopyHand = new ArrayList<>();
+            deepCopyHand.addAll(newgame.getCardsInHandForPlayerTwo());
+        }
+
+        node =  objectMapper.createObjectNode();
+        node.put("command", command);
+        node.put("playerIdx", playerIdx);
+        node.putPOJO("output", deepCopyHand);
+
     }
 
-    public void setOutput(ArrayList<Card> output) {
-        this.output = output;
+
+
+
+
+
+
+
+
+    public String getCommand() {
+        return command;
     }
+
+    public void setCommand(String command) {
+        this.command = command;
+    }
+
+    public ObjectNode getNode() {
+        return node;
+    }
+
+    public void setNode(ObjectNode node) {
+        this.node = node;
+    }
+
+
+
 }

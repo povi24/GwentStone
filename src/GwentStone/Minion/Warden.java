@@ -1,5 +1,6 @@
 package GwentStone.Minion;
 
+import GwentStone.Card;
 import fileio.CardInput;
 
 import java.util.ArrayList;
@@ -11,8 +12,14 @@ public class Warden extends Minion{
 //        isTank = true;
 //    }
 
+    public Warden(Card card) {
+        super(card);
+
+    }
     public Warden(CardInput card) {
         super(card);
+        setPosition("front");
+
     }
     @Override
     public void SpecialAbilityOfMinion() {

@@ -10,6 +10,7 @@ public class KIngMudface extends Hero {
 //    }
     public KIngMudface (CardInput card) {
         super(card);
+        setHealth(30);
     }
 
 }

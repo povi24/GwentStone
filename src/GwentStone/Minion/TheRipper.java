@@ -1,5 +1,6 @@
 package GwentStone.Minion;
 
+import GwentStone.Card;
 import fileio.CardInput;
 
 import java.util.ArrayList;
@@ -12,8 +13,14 @@ public class TheRipper extends Minion{
 //        isTank = false;
 //    }
 
+    public TheRipper(Card card) {
+        super(card);
+
+    }
     public TheRipper(CardInput card) {
         super(card);
+        setPosition("front");
+
     }
     @Override
     public void SpecialAbilityOfMinion() {

@@ -1,6 +1,7 @@
 package GwentStone.Minion;
 
 import GwentStone.Card;
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import fileio.CardInput;
 
 import java.util.ArrayList;
@@ -9,31 +10,42 @@ public abstract class Minion  extends Card {
     /**
      *MANA for each card
      */
-    public int mana;
+    private int mana;
     /**
      * HEALTH points for each card
      */
-    public int health;
+    private int health;
     /**
      * Points each card attacks with
      */
-    public int attackDamage;
+    private int attackDamage;
     /**
      * Description for each card
      */
-    public String description;
+    private String description;
     /**
      * Colors that make up the design of a card
      */
-    public ArrayList<String> colors;
+    private ArrayList<String> colors;
     /**
      * Name of each card
      */
-    public String name;
+    private String name;
     /**
      *Checks if card is frozen
      */
-    //public boolean isFrozen;
+    @JsonIgnore
+    public boolean isFrozen;
+
+    @JsonIgnore
+    public boolean isFrozen() {
+        return isFrozen;
+    }
+
+    @JsonIgnore
+    public void setFrozen(boolean frozen) {
+        isFrozen = frozen;
+    }
 
     /**
      *Checks if card is a Tank Card
@@ -48,6 +60,15 @@ public abstract class Minion  extends Card {
 //        this.Colors = Colors;
 //        this.Name = Name;
 //    }
+
+    public Minion(Card card) {
+        this.mana = card.getMana();
+        this.health = card.getHealth();
+        this.attackDamage = card.getAttackDamage();
+        this.description = card.getDescription();
+        this.colors = card.getColors();
+        this.name = card.getName();
+    }
 
     public Minion(CardInput card) {
         this.mana = card.getMana();

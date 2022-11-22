@@ -1,7 +1,9 @@
 package main;
 
-import GwentStone.AnotherCommands.PlayerHero;
-import GwentStone.AnotherCommands.PlayerTurn;
+import GwentStone.AnotherCommands.*;
+import GwentStone.Card;
+import GwentStone.DebugCommands.CardsInHand;
+import GwentStone.DebugCommands.CardsOnTable;
 import GwentStone.DebugCommands.PlayerDeck;
 import GwentStone.StartingTheGame;
 import checker.Checker;
@@ -91,12 +93,28 @@ public final class Main {
                 } else if (inputData.getGames().get(iterator).getActions().get(j).getCommand().equals("getPlayerTurn")) {
                         PlayerTurn newInstance = new PlayerTurn (inputData.getGames().get(iterator).getActions().get(j), newgame, objectMapper);
                         output.add(newInstance.getNode());
+                } else if (inputData.getGames().get(iterator).getActions().get(j).getCommand().equals("placeCard")) {
+                    PlaceCard newInstance = new PlaceCard(inputData.getGames().get(iterator).getActions().get(j), newgame, objectMapper);
+                    if(newInstance.isShowError()) {
+                        output.add(newInstance.getNode());
+                    }
+                } else if (inputData.getGames().get(iterator).getActions().get(j).getCommand().equals("endPlayerTurn")) {
+                    EndPlayerTurn newInstance = new EndPlayerTurn(newgame);
+                } else if (inputData.getGames().get(iterator).getActions().get(j).getCommand().equals("getCardsInHand")) {
+                    CardsInHand newInstance = new CardsInHand(inputData.getGames().get(iterator).getActions().get(j), newgame, objectMapper);
+                    output.add(newInstance.getNode());
+                } else if (inputData.getGames().get(iterator).getActions().get(j).getCommand().equals("getPlayerMana")) {
+                    PlayerMana newInstance = new PlayerMana(inputData.getGames().get(iterator).getActions().get(j), newgame, objectMapper);
+                    output.add(newInstance.getNode());
+                } else if (inputData.getGames().get(iterator).getActions().get(j).getCommand().equals("getCardsOnTable")) {
+                    CardsOnTable newInstance = new CardsOnTable(inputData.getGames().get(iterator).getActions().get(j), newgame, objectMapper);
+                    output.add(newInstance.getNode());
                 }
                 //ia frate sa vedem daca merge testam a doua oaraggg
             }
         }
 
-
+    System.out.println("---END TEST---");
 
         ObjectWriter objectWriter = objectMapper.writerWithDefaultPrettyPrinter();
         objectWriter.writeValue(new File(filePath2), output);

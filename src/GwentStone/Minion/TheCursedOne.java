@@ -1,5 +1,6 @@
 package GwentStone.Minion;
 
+import GwentStone.Card;
 import fileio.CardInput;
 
 import java.util.ArrayList;
@@ -11,9 +12,13 @@ public class TheCursedOne extends Minion{
 //        isTank = false;
 //    }
 
+    public TheCursedOne(Card card) {
+        super(card);
 
+    }
     public TheCursedOne(CardInput card) {
         super(card);
+        setPosition("back");
     }
     @Override
     public void SpecialAbilityOfMinion() {

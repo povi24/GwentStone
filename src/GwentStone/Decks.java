@@ -84,17 +84,6 @@ public class Decks {
             };
             //am adaugat fiecare tip de carte in pachetul jucatorului2
             DeckOfPlayerTwo.add(auxCard);
-
         }
-
-
-
-
-
-
-
     }
-
-
-
 }

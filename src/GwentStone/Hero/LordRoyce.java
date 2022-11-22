@@ -11,5 +11,6 @@ public class LordRoyce extends Hero{
 
     public LordRoyce (CardInput card) {
         super(card);
+        setHealth(30);
     }
 }

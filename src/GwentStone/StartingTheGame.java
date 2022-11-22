@@ -142,6 +142,27 @@ public class StartingTheGame {
 
     private int currentTurn;
 
+    private int roundCounter;
+
+    private int round;
+
+    private CreateTable table;
+
+    public CreateTable getTable() {
+        return table;
+    }
+
+    public void setTable(CreateTable table) {
+        this.table = table;
+    }
+
+    public int getRound() {
+        return round;
+    }
+
+    public void setRound(int round) {
+        this.round = round;
+    }
 
     public StartingTheGame (final Input input, final int iterator) {
         /**
@@ -199,10 +220,22 @@ public class StartingTheGame {
         ManaOfPlayerOne = 1;
         ManaOfPlayerTwo = 1;
 
+        //aici retin jucatorul care incepe
         currentTurn = input.getGames().get(iterator).getStartGame().getStartingPlayer();
 
+        roundCounter = 0;
+
+        round = 1;
+
+        table = new CreateTable();
 
     }
 
+    public int getRoundCounter() {
+        return roundCounter;
+    }
 
+    public void setRoundCounter(int roundCounter) {
+        this.roundCounter = roundCounter;
+    }
 }

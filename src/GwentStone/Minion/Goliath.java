@@ -1,5 +1,6 @@
 package GwentStone.Minion;
 
+import GwentStone.Card;
 import fileio.CardInput;
 
 import java.util.ArrayList;
@@ -10,8 +11,15 @@ public class Goliath extends Minion{
 //        isFrozen = false;
 //        isTank = true;
 //    }
+
+    public Goliath(Card card) {
+        super(card);
+
+    }
     public Goliath(CardInput card) {
         super(card);
+        setPosition("front");
+
     }
 
     @Override

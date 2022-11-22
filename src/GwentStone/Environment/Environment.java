@@ -9,19 +9,19 @@ public abstract class Environment extends Card {
     /**
      *MANA for each card
      */
-    public int mana;
+    private int mana;
     /**
      * Description for each card
      */
-    public String description;
+    private String description;
     /**
      * Colors that make up the design of a card
      */
-    public ArrayList<String> colors;
+    private ArrayList<String> colors;
     /**
      * Name of each card
      */
-    public String name;
+    private String name;
 
 //    public Environment(int MANA, String Description, ArrayList<String> Colors, String Name) {
 //        this.mana = MANA;

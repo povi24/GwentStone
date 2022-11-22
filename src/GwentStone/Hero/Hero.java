@@ -9,23 +9,23 @@ public abstract class Hero extends Card {
     /**
      *MANA for each card
      */
-    public int mana;
+    private int mana;
     /**
      * Description for each card
      */
-    public String description;
+    private String description;
     /**
      * Colors that make up the design of a card
      */
-    public ArrayList<String> colors;
+    private ArrayList<String> colors;
     /**
      * Name of each card
      */
-    public String name;
+    private String name;
     /**
      * HEALTH points for each card
      */
-    public final int health = 30;
+    private int health;
 
 
 //    public Hero(String Name,int  MANA, String Description, ArrayList<String> Colors) {
@@ -41,6 +41,7 @@ public abstract class Hero extends Card {
         this.description = card.getDescription();
         this.colors = card.getColors();
         this.name = card.getName();
+        this.health = 30;
     }
 
     public int getMana() {

@@ -1,5 +1,6 @@
 package GwentStone.Minion;
 
+import GwentStone.Card;
 import fileio.CardInput;
 
 import java.util.ArrayList;
@@ -12,9 +13,13 @@ public class Berserker extends Minion {
 //        isFrozen = false;
 //        isTank = false;
 //    }
+public Berserker(Card card) {
+    super(card);
 
+}
     public Berserker(CardInput card) {
         super(card);
+        setPosition("back");
     }
 
     @Override

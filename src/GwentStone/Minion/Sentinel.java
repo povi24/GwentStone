@@ -1,5 +1,6 @@
 package GwentStone.Minion;
 
+import GwentStone.Card;
 import fileio.CardInput;
 
 import java.util.ArrayList;
@@ -10,9 +11,14 @@ public class Sentinel extends Minion{
 //        isFrozen = false;
 //        isTank = false;
 //    }
+public Sentinel(Card card) {
+    super(card);
 
+}
     public Sentinel(CardInput card) {
         super(card);
+        setPosition("back");
+
     }
     @Override
     public void SpecialAbilityOfMinion() {
