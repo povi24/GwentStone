@@ -1,10 +1,7 @@
 package main;
 
-import GwentStone.AnotherCommands.*;
-import GwentStone.Card;
-import GwentStone.DebugCommands.CardsInHand;
-import GwentStone.DebugCommands.CardsOnTable;
-import GwentStone.DebugCommands.PlayerDeck;
+import GwentStone.GameplayCommands.*;
+import GwentStone.DebugCommands.*;
 import GwentStone.StartingTheGame;
 import checker.Checker;
 
@@ -12,7 +9,6 @@ import com.fasterxml.jackson.databind.ObjectMapper;
 import com.fasterxml.jackson.databind.ObjectWriter;
 import com.fasterxml.jackson.databind.node.ArrayNode;
 import checker.CheckerConstants;
-import com.fasterxml.jackson.databind.node.ObjectNode;
 import fileio.Input;
 
 import java.io.File;
@@ -85,7 +81,7 @@ public final class Main {
             for(int j = 0; j < inputData.getGames().get(iterator).getActions().size(); j++) {
                 //pentru fiecare actiune se creaza un nod prin care afisam in output output-ul actiunii
                 if (inputData.getGames().get(iterator).getActions().get(j).getCommand().equals("getPlayerDeck")) {
-                    PlayerDeck newInstance = new PlayerDeck(inputData.getGames().get(iterator).getActions().get(j), newgame.getDecks(), objectMapper );
+                    PlayerDeck newInstance = new PlayerDeck(inputData.getGames().get(iterator).getActions().get(j), newgame.getDecks(), objectMapper);
                     output.add(newInstance.getNode());
                 } else if (inputData.getGames().get(iterator).getActions().get(j).getCommand().equals("getPlayerHero")) {
                     PlayerHero newInstance = new PlayerHero(inputData.getGames().get(iterator).getActions().get(j), newgame, objectMapper);
@@ -109,7 +105,31 @@ public final class Main {
                 } else if (inputData.getGames().get(iterator).getActions().get(j).getCommand().equals("getCardsOnTable")) {
                     CardsOnTable newInstance = new CardsOnTable(inputData.getGames().get(iterator).getActions().get(j), newgame, objectMapper);
                     output.add(newInstance.getNode());
-                }
+                } else if (inputData.getGames().get(iterator).getActions().get(j).getCommand().equals("getEnvironmentCardsInHand")){
+                    EnvironmentCardsInHand newInstance = new EnvironmentCardsInHand(inputData.getGames().get(iterator).getActions().get(j), newgame, objectMapper);
+                    output.add(newInstance.getNode());
+                } else if (inputData.getGames().get(iterator).getActions().get(j).getCommand().equals("useEnvironmentCard")) {
+                    EnvironmentCard newInstance = new EnvironmentCard(inputData.getGames().get(iterator).getActions().get(j), newgame, objectMapper);
+                    if (newInstance.isShowError()) {
+                        output.add(newInstance.getNode());
+                    }
+                } else if (inputData.getGames().get(iterator).getActions().get(j).getCommand().equals("getCardAtPosition")) {
+                    CardAtPosition newInstance = new CardAtPosition(inputData.getGames().get(iterator).getActions().get(j), newgame, objectMapper);
+                    output.add(newInstance.getNode());
+                } else if (inputData.getGames().get(iterator).getActions().get(j).getCommand().equals("getFrozenCardsOnTable")) {
+                    FrozenCardsOnTable newInstance = new FrozenCardsOnTable(inputData.getGames().get(iterator).getActions().get(j), newgame, objectMapper);
+                    output.add(newInstance.getNode());
+                } else if (inputData.getGames().get(iterator).getActions().get(j).getCommand().equals("cardUsesAttack")) {
+                    CardUsesAttack newInstance = new CardUsesAttack(inputData.getGames().get(iterator).getActions().get(j), newgame, objectMapper);
+                    if (newInstance.isShowError()) {
+                        output.add(newInstance.getNode());
+                    }
+                } else if (inputData.getGames().get(iterator).getActions().get(j).getCommand().equals("cardUsesAbility")) {
+                    CardUsesAbility newInstance = new CardUsesAbility(inputData.getGames().get(iterator).getActions().get(j), newgame, objectMapper);
+                    if (newInstance.isShowError()) {
+                        output.add(newInstance.getNode());
+                    }
+                } else System.out.println("Inca nu ai implementat " + inputData.getGames().get(iterator).getActions().get(j).getCommand());
                 //ia frate sa vedem daca merge testam a doua oaraggg
             }
         }

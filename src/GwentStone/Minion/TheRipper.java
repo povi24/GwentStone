@@ -26,4 +26,17 @@ public class TheRipper extends Minion{
     public void SpecialAbilityOfMinion() {
 
     }
+
+    @Override
+    public void environmentAbility(ArrayList<ArrayList<Minion>> table, int affectedRow) {
+
+    }
+
+    @Override
+    public void minionAbility(ArrayList<ArrayList<Minion>> table, int attackedX, int attackedY) {
+        table.get(attackedX).get(attackedY).setAttackDamage(table.get(attackedX).get(attackedY).getAttackDamage() - 2);
+        if (table.get(attackedX).get(attackedY).getAttackDamage() < 0) {
+            table.get(attackedX).get(attackedY).setAttackDamage(0);
+        }
+    }
 }

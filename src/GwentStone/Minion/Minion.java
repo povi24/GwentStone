@@ -1,12 +1,13 @@
 package GwentStone.Minion;
 
+import GwentStone.Ability;
 import GwentStone.Card;
 import com.fasterxml.jackson.annotation.JsonIgnore;
 import fileio.CardInput;
 
 import java.util.ArrayList;
 
-public abstract class Minion  extends Card {
+public abstract class Minion  extends Card implements Ability {
     /**
      *MANA for each card
      */
@@ -35,7 +36,13 @@ public abstract class Minion  extends Card {
      *Checks if card is frozen
      */
     @JsonIgnore
-    public boolean isFrozen;
+    private boolean isFrozen;
+
+    @JsonIgnore
+    private boolean hasAlreadyAttacked;
+
+    @JsonIgnore
+    private boolean isTank;
 
     @JsonIgnore
     public boolean isFrozen() {
@@ -47,19 +54,27 @@ public abstract class Minion  extends Card {
         isFrozen = frozen;
     }
 
-    /**
-     *Checks if card is a Tank Card
-     */
-    //public boolean isTank;
+    @JsonIgnore
+    public boolean isTank() {
+        return isTank;
+    }
 
-//    public Minion(int MANA, int HEALTH, int AttackDamage, String Description, ArrayList<String> Colors, String Name) {
-//        this.MANA = MANA;
-//        this.HEALTH = HEALTH;
-//        this.AttackDamage = AttackDamage;
-//        this.Description = Description;
-//        this.Colors = Colors;
-//        this.Name = Name;
-//    }
+    @JsonIgnore
+    public void setTank(boolean tank) {
+        isTank = tank;
+    }
+
+    @JsonIgnore
+    public boolean getIfAlreadyAttacked() {
+        return hasAlreadyAttacked;
+    }
+
+    @JsonIgnore
+    public void setIfAlreadyAttacked(boolean alreadyAttacked) {
+        hasAlreadyAttacked = alreadyAttacked;
+    }
+
+
 
     public Minion(Card card) {
         this.mana = card.getMana();

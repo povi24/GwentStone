@@ -26,4 +26,13 @@ public Disciple(Card card) {
 
     }
 
+    @Override
+    public void environmentAbility(ArrayList<ArrayList<Minion>> table, int affectedRow) {
+
+    }
+
+    @Override
+    public void minionAbility(ArrayList<ArrayList<Minion>> table, int attackedX, int attackedY) {
+    table.get(attackedX).get(attackedY).setHealth(table.get(attackedX).get(attackedY).getHealth() + 2);
+    }
 }

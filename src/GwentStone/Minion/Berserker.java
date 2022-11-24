@@ -26,4 +26,14 @@ public Berserker(Card card) {
     public void SpecialAbilityOfMinion() {
 
     }
+
+    @Override
+    public void environmentAbility(ArrayList<ArrayList<Minion>> table, int affectedRow) {
+
+    }
+
+    @Override
+    public void minionAbility(ArrayList<ArrayList<Minion>> table, int attackedX, int attackedY) {
+
+    }
 }

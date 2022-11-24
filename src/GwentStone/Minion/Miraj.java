@@ -20,4 +20,16 @@ public class Miraj extends Minion {
     public void SpecialAbilityOfMinion() {
 
     }
+
+    @Override
+    public void environmentAbility(ArrayList<ArrayList<Minion>> table, int affectedRow) {
+
+    }
+
+    @Override
+    public void minionAbility(ArrayList<ArrayList<Minion>> table, int attackedX, int attackedY) {
+        int aux = table.get(attackedX).get(attackedY).getHealth();
+        table.get(attackedX).get(attackedY).setHealth(getHealth());
+        setHealth(aux);
+    }
 }

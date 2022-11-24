@@ -32,7 +32,6 @@ public class CardsInHand {
         ArrayList<Card> deepCopyHand;
 
         if(playerIdx == 1) {
-
             deepCopyHand = new ArrayList<>();
             deepCopyHand.addAll(newgame.getCardsInHandForPlayerOne());
         } else {
@@ -46,15 +45,6 @@ public class CardsInHand {
         node.putPOJO("output", deepCopyHand);
 
     }
-
-
-
-
-
-
-
-
-
     public String getCommand() {
         return command;
     }

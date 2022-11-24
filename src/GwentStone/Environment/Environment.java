@@ -1,11 +1,13 @@
 package GwentStone.Environment;
 
+import GwentStone.Ability;
 import GwentStone.Card;
+import GwentStone.Minion.Minion;
 import fileio.CardInput;
 
 import java.util.ArrayList;
 
-public abstract class Environment extends Card {
+public abstract class Environment extends Card implements Ability {
     /**
      *MANA for each card
      */
@@ -67,4 +69,6 @@ public abstract class Environment extends Card {
     public void setName(String name) {
         this.name = name;
     }
+
+    public abstract void environmentAbility(ArrayList<ArrayList<Minion>> table,int affectedRow);
 }

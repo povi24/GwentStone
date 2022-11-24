@@ -14,16 +14,28 @@ public class Goliath extends Minion{
 
     public Goliath(Card card) {
         super(card);
+        setTank(true);
 
     }
     public Goliath(CardInput card) {
         super(card);
+        setTank(true);
         setPosition("front");
 
     }
 
     @Override
     public void SpecialAbilityOfMinion() {
+
+    }
+
+    @Override
+    public void environmentAbility(ArrayList<ArrayList<Minion>> table, int affectedRow) {
+
+    }
+
+    @Override
+    public void minionAbility(ArrayList<ArrayList<Minion>> table, int attackedX, int attackedY) {
 
     }
 }

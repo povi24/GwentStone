@@ -20,8 +20,22 @@ public Sentinel(Card card) {
         setPosition("back");
 
     }
+
+    public Sentinel(Minion card) {
+        super(card);
+    }
     @Override
     public void SpecialAbilityOfMinion() {
+
+    }
+
+    @Override
+    public void environmentAbility(ArrayList<ArrayList<Minion>> table, int affectedRow) {
+
+    }
+
+    @Override
+    public void minionAbility(ArrayList<ArrayList<Minion>> table, int attackedX, int attackedY) {
 
     }
 }

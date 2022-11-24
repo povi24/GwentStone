@@ -211,11 +211,14 @@ public class StartingTheGame {
         CardsInHandForPlayerOne = new ArrayList<>();
         CardsInHandForPlayerOne.add(decks.getDeckOfPlayerOne().get(0));
         decks.getDeckOfPlayerOne().remove(0);
+        System.out.println("starting the game: " + CardsInHandForPlayerOne.size());
+
 
         CardsInHandForPlayerTwo = new ArrayList<>();
         CardsInHandForPlayerTwo.add(decks.getDeckOfPlayerTwo().get(0));
         decks.getDeckOfPlayerTwo().remove(0);
 
+        System.out.println("starting the game: " + CardsInHandForPlayerTwo.size());
 
         ManaOfPlayerOne = 1;
         ManaOfPlayerTwo = 1;
