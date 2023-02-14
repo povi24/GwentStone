@@ -1,44 +1,67 @@
+Andreea Povarnă, 324CA
+OOP Homework - GwentStone
+
+Overview
+
+	The project aims to simulate a card game similar to HeartStone, named
+GwentStone. It allows players to choose a deck of cards, place cards on the 
+board, attack the other player's cards and use different abilities of each card.
+	
+	In order to understand the logic of the game more easily, I tried to
+implement as many classes as possible that are connected to each other in the 
+following way:
+	
+- the Card class is like a root, being an abstract class that contains the
+fields common to all types of cards.
 
 
-# Tema POO  - GwentStone
+- the Minion class extends the Card class and has special fields specific to
+this type of cards. Furthermore, the Berserker, Disciple, Goliath, Sentinel,
+TheCursedOne, TheRipper, Warden cards will be of the MInion type and will have
+specific methods that describe their ability and also retain the position they
+can be placed on the board (front or back) - the minion abstract class together
+with each minion is in the minion package
 
-<div align="center"><img src="https://tenor.com/view/witcher3-gif-9340436.gif" width="500px"></div>
+- the Hero class expands the Card class and retains the heroes who have a
+special role in the game, unlike the minion cards. They will not be placed on 
+the board, and killing them will win the game - the Hero abstract class together
+with each hero is in the hero package
 
-#### Assignment Link: [https://ocw.cs.pub.ro/courses/poo-ca-cd/teme/tema](https://ocw.cs.pub.ro/courses/poo-ca-cd/teme/tema)
+- the Environment class extends the Card class and retains the cards of this
+type that have the property that they cannot be placed on the game board, and
+their use affects an entire row of the opponent - the abstract class Environment
+together with each card of this type is in the environment package
 
+-------------------------------------------------------------------------------
 
-## Skel Structure
-
-* src/
-  * checker/ - checker files
-  * fileio/ - contains classes used to read data from the json files
-  * main/
-      * Main - the Main class runs the checker on your implementation. Add the entry point to your implementation in it. Run Main to test your implementation from the IDE or from command line.
-      * Test - run the main method from Test class with the name of the input file from the command line and the result will be written
-        to the out.txt file. Thus, you can compare this result with ref.
-* input/ - contains the tests in JSON format
-* ref/ - contains all reference output for the tests in JSON format
-
-## Tests
-
-1. test01_game_start - 3p
-2. test02_place_card - 4p
-3. test03_place_card_invalid - 4p
-4. test04_use_env_card - 4p
-5. test05_use_env_card_invalid - 4p
-6. test06_attack_card - 4p
-7. test07_attack_card_invalid - 4p
-8. test08_use_card_ability - 4p
-9. test09_use_card_ability_invalid -4p
-10. test10_attack_hero - 4p
-11. test11_attack_hero_invalid - 4p
-12. test12_use_hero_ability_1 - 4p
-13. test13_use_hero_ability_2 - 4p
-14. test14_use_hero_ability_1_invalid - 4p
-15. test15_use_hero_ability_2_invalid - 4p
-16. test16_multiple_games_valid - 5p
-17. test17_multiple_games_invalid - 6p
-18. test18_big_game - 10p
+	For the easiest possible testing of the homework and to implement different
+functionalities in turn, we started by creating an initial game, where we 
+initialize all the necessary data such as:
+- hero assignment for each player
+- choosing a deck of cards to be shuffled
+- placing the first card from the chosen deck in the player's hand
+- the mana received by each player at the beginning of the game
+- the initiation of the game board
+- counter for the number of rounds played
+- a variable that holds the player who starts the game
 
 
-<div align="center"><img src="https://tenor.com/view/homework-time-gif-24854817.gif" width="500px"></div>
+	Therefore, in all the classes that implement different functionalities,
+we will receive as a parameter an object of the StartingTHeGame type that will
+start the game.
+
+	In order to try to have the best possible modularization, each command
+is implemented within a class. Thus, in the DebugCommands package there are the
+debug commands mentioned in the homework, and in GameplayCommands those
+that test different actions described in the homework
+	
+-------------------------------------------------------------------------------
+
+some feedback :)
+
+It was a homework where I really learned a lot of new things, which showed me how
+important good modularization is in an object-oriented programming subject, and
+although I had a very slow start and I didn't manage to implement the whole topic,
+with I will definitely continue because i beliebve that it is a very cool project
+to put in the portfolio.
+

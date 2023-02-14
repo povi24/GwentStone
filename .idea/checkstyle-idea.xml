@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="CheckStyle-IDEA" serialisationVersion="2">
+    <checkstyleVersion>10.4</checkstyleVersion>
+    <scanScope>Everything</scanScope>
+    <option name="thirdPartyClasspath" />
+    <option name="activeLocationIds" />
+    <option name="locations">
+      <list>
+        <ConfigurationLocation id="bundled-sun-checks" type="BUNDLED" scope="All" description="Sun Checks">(bundled)</ConfigurationLocation>
+        <ConfigurationLocation id="bundled-google-checks" type="BUNDLED" scope="All" description="Google Checks">(bundled)</ConfigurationLocation>
+        <ConfigurationLocation id="30fcb653-e3a4-4bf1-8741-dd7929e7c40b" type="LOCAL_FILE" scope="All" description="check2">$PROJECT_DIR$/../../../../../../checker/poo_checks.xml</ConfigurationLocation>
+        <ConfigurationLocation id="3574c18a-3187-4472-87c0-8e988dde9e0e" type="LOCAL_FILE" scope="All" description="checker">$PROJECT_DIR$/../../../../../../checker/poo_checks.xml</ConfigurationLocation>
+      </list>
+    </option>
+  </component>
+</project>
