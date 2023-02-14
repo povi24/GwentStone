@@ -2,14 +2,14 @@
 ### OOP Assignment
 ### Andreea Povarnă, 324CA :)
 
-![GwentStone](https://images.app.goo.gl/2mQGm1RrAWqEHZ1F6)
+![GwentStone](https://github.com/povi24/GwentStone/blob/master/GwentStone.png)
 
 # Getting Started
 
 
-The project aims to simulate a 2-player card game, similar to Hearthstone. It allows players to choose a deck of cards, place cards on the table, attack the other player's cards and use different abilities of each card.
-- [Example 1](https://www.example.com)
-- [Example 2](https://www.example.com)
+The project aims to simulate a 2-player card game, similar to Hearthstone. It allows players to choose a deck of cards, place cards on the table, attack the other player's cards and use different abilities of each card. The diagram below shows the game table and the position of each player relative to it.
+
+
 
 ### Installing
 
