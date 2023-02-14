@@ -1,67 +1,87 @@
-Andreea Povarnă, 324CA
-OOP Homework - GwentStone
+# GwentStone
+### OOP Assignment
+### Andreea Povarnă, 324CA :)
 
-Overview
+![GwentStone](https://images.app.goo.gl/2mQGm1RrAWqEHZ1F6)
 
-	The project aims to simulate a card game similar to HeartStone, named
-GwentStone. It allows players to choose a deck of cards, place cards on the 
-board, attack the other player's cards and use different abilities of each card.
-	
-	In order to understand the logic of the game more easily, I tried to
-implement as many classes as possible that are connected to each other in the 
-following way:
-	
-- the Card class is like a root, being an abstract class that contains the
-fields common to all types of cards.
+# Getting Started
 
 
-- the Minion class extends the Card class and has special fields specific to
-this type of cards. Furthermore, the Berserker, Disciple, Goliath, Sentinel,
-TheCursedOne, TheRipper, Warden cards will be of the MInion type and will have
-specific methods that describe their ability and also retain the position they
-can be placed on the board (front or back) - the minion abstract class together
-with each minion is in the minion package
+The project aims to simulate a 2-player card game, similar to Hearthstone. It allows players to choose a deck of cards, place cards on the table, attack the other player's cards and use different abilities of each card.
+- [Example 1](https://www.example.com)
+- [Example 2](https://www.example.com)
 
-- the Hero class expands the Card class and retains the heroes who have a
-special role in the game, unlike the minion cards. They will not be placed on 
-the board, and killing them will win the game - the Hero abstract class together
-with each hero is in the hero package
+### Installing
 
-- the Environment class extends the Card class and retains the cards of this
-type that have the property that they cannot be placed on the game board, and
-their use affects an entire row of the opponent - the abstract class Environment
-together with each card of this type is in the environment package
+A step by step series of examples that tell you how to get a development
+environment running
 
--------------------------------------------------------------------------------
+Say what the step will be
 
-	For the easiest possible testing of the homework and to implement different
-functionalities in turn, we started by creating an initial game, where we 
-initialize all the necessary data such as:
-- hero assignment for each player
-- choosing a deck of cards to be shuffled
-- placing the first card from the chosen deck in the player's hand
-- the mana received by each player at the beginning of the game
-- the initiation of the game board
-- counter for the number of rounds played
-- a variable that holds the player who starts the game
+    Give the example
 
+And repeat
 
-	Therefore, in all the classes that implement different functionalities,
-we will receive as a parameter an object of the StartingTHeGame type that will
-start the game.
+    until finished
 
-	In order to try to have the best possible modularization, each command
-is implemented within a class. Thus, in the DebugCommands package there are the
-debug commands mentioned in the homework, and in GameplayCommands those
-that test different actions described in the homework
-	
--------------------------------------------------------------------------------
+End with an example of getting some data out of the system or using it
+for a little demo
 
-some feedback :)
+## Running the tests
 
-It was a homework where I really learned a lot of new things, which showed me how
-important good modularization is in an object-oriented programming subject, and
-although I had a very slow start and I didn't manage to implement the whole topic,
-with I will definitely continue because i beliebve that it is a very cool project
-to put in the portfolio.
+Explain how to run the automated tests for this system
 
+### Sample Tests
+
+Explain what these tests test and why
+
+    Give an example
+
+### Style test
+
+Checks if the best practices and the right coding style has been used.
+
+    Give an example
+
+## Deployment
+
+Add additional notes to deploy this on a live system
+
+## Built With
+
+  - [Contributor Covenant](https://www.contributor-covenant.org/) - Used
+    for the Code of Conduct
+  - [Creative Commons](https://creativecommons.org/) - Used to choose
+    the license
+
+## Contributing
+
+Please read [CONTRIBUTING.md](CONTRIBUTING.md) for details on our code
+of conduct, and the process for submitting pull requests to us.
+
+## Versioning
+
+We use [Semantic Versioning](http://semver.org/) for versioning. For the versions
+available, see the [tags on this
+repository](https://github.com/PurpleBooth/a-good-readme-template/tags).
+
+## Authors
+
+  - **Billie Thompson** - *Provided README Template* -
+    [PurpleBooth](https://github.com/PurpleBooth)
+
+See also the list of
+[contributors](https://github.com/PurpleBooth/a-good-readme-template/contributors)
+who participated in this project.
+
+## License
+
+This project is licensed under the [CC0 1.0 Universal](LICENSE.md)
+Creative Commons License - see the [LICENSE.md](LICENSE.md) file for
+details
+
+## Acknowledgments
+
+  - Hat tip to anyone whose code is used
+  - Inspiration
+  - etc
