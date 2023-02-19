@@ -7,81 +7,30 @@
 # Getting Started
 
 
-The project aims to simulate a 2-player card game, similar to Hearthstone. It allows players to choose a deck of cards, place cards on the table, attack the other player's cards and use different abilities of each card. The diagram below shows the game table and the position of each player relative to it.
+The project aims to simulate a 2-player card game, similar to Hearthstone. It allows players to choose a deck of cards, place cards on the table, attack the other player's cards and use different abilities of each card. The drawing below shows the game table and the position of each player relative to it.
+
+![Players](https://github.com/povi24/GwentStone/blob/master/PlayersandTable.png)
+
+### Project structure
+
+* src/
+    - checker/ - checker files
+    - fileio/ - contains classes used to read data from the json files
+    - main/
+        - Main - the Main class runs the checker on your implementation. Add the entry point to your implementation in it. Run Main to test your implementation from the IDE or from command line.
+        - Test - run the main method from Test class with the name of the input file from the command line and the result will be written to the out.txt file. Thus, you can compare this result with ref.
+    - gwentstone/ - contains the flow of the program
+        - debugcommands - contains classes used for debugging, as well as printing the required output
+        - environment/ 
+    - input/ - contains the tests in JSON format
+    - ref/ - contains all reference output for the tests in JSON format
 
 
 
-### Installing
 
-A step by step series of examples that tell you how to get a development
-environment running
 
-Say what the step will be
 
-    Give the example
 
-And repeat
 
-    until finished
 
-End with an example of getting some data out of the system or using it
-for a little demo
 
-## Running the tests
-
-Explain how to run the automated tests for this system
-
-### Sample Tests
-
-Explain what these tests test and why
-
-    Give an example
-
-### Style test
-
-Checks if the best practices and the right coding style has been used.
-
-    Give an example
-
-## Deployment
-
-Add additional notes to deploy this on a live system
-
-## Built With
-
-  - [Contributor Covenant](https://www.contributor-covenant.org/) - Used
-    for the Code of Conduct
-  - [Creative Commons](https://creativecommons.org/) - Used to choose
-    the license
-
-## Contributing
-
-Please read [CONTRIBUTING.md](CONTRIBUTING.md) for details on our code
-of conduct, and the process for submitting pull requests to us.
-
-## Versioning
-
-We use [Semantic Versioning](http://semver.org/) for versioning. For the versions
-available, see the [tags on this
-repository](https://github.com/PurpleBooth/a-good-readme-template/tags).
-
-## Authors
-
-  - **Billie Thompson** - *Provided README Template* -
-    [PurpleBooth](https://github.com/PurpleBooth)
-
-See also the list of
-[contributors](https://github.com/PurpleBooth/a-good-readme-template/contributors)
-who participated in this project.
-
-## License
-
-This project is licensed under the [CC0 1.0 Universal](LICENSE.md)
-Creative Commons License - see the [LICENSE.md](LICENSE.md) file for
-details
-
-## Acknowledgments
-
-  - Hat tip to anyone whose code is used
-  - Inspiration
-  - etc
